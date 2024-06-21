@@ -26,4 +26,4 @@ rails server
 Postman: https://documenter.getpostman.com/view/1898554/2sA3XV9KT5
 
 ### Heroku API test
-https://floating-garden-93986-ef06767d4d4c.herokuapp.com/api/board
+https://floating-garden-93986-ef06767d4d4c.herokuapp.com/board
