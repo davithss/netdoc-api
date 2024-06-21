@@ -78,4 +78,16 @@ RSpec.describe BoardsController, type: :controller do
       expect(JSON.parse(response.body)).to eq(valid_cells)
     end
   end
+
+	describe "POST #reset" do
+		it "resets the game and returns the initial board state" do
+      expect(game).to receive(:reset)
+
+      post :reset, params: { id: board.id }, as: :json
+
+      expect(response).to have_http_status(:ok)
+      expect(response.content_type).to eq('application/json; charset=utf-8')
+      expect(JSON.parse(response.body)).to eq(valid_cells)
+		end
+	end
 end

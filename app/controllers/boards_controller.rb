@@ -1,5 +1,5 @@
 class BoardsController < ApplicationController
-	before_action :load_game, only: [:next_state, :state, :final_state]
+	before_action :load_game, only: [:next_state, :state, :final_state, :reset]
 	
 	def create
 		if params[:cells].present?
@@ -30,6 +30,11 @@ class BoardsController < ApplicationController
 		render json: @game.board.cells, status: :ok
 	end
 	
+	def reset
+    @game.reset
+    render json: @game.board.cells, status: :ok
+  end
+
 	private
 	
 	def load_game
