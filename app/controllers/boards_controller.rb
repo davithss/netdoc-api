@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
 	def create
 		if params[:cells].present?
 			game = Game.new.start(params[:cells])
-			render json: game.board.cells, status: :created
+			render json: game.board, status: :created
 		else
 			render json: { error: "Cells can't be blank" }, status: :unprocessable_entity
 		end

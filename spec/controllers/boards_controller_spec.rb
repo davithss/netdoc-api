@@ -24,7 +24,7 @@ RSpec.describe BoardsController, type: :controller do
 
         expect(response).to have_http_status(:created)
         expect(response.content_type).to eq('application/json; charset=utf-8')
-        expect(JSON.parse(response.body)).to eq(valid_cells)
+				expect(JSON.parse(response.body)["cells"]).to eq(valid_cells)
       end
     end
 
