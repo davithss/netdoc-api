@@ -1,24 +1,29 @@
 # README
+=====================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Getting Started
 
-Things you may want to cover:
+### Clone the Repository
 
-* Ruby version
+To get started, clone the repository using the following command: git clone https://github.com/davithss/netdoc-api
 
-* System dependencies
+### Install Dependencies
 
-* Configuration
+Next, install the required dependencies using Bundler: bundle install
 
-* Database creation
+### Set up the Database
 
-* Database initialization
+Create and migrate the database using the following commands: rails db:create db:migrate
 
-* How to run the test suite
+### Run the specs
 
-* Services (job queues, cache servers, search engines, etc.)
+Testing the code: bundle exec rspec
 
-* Deployment instructions
+### Run the server
+rails server
 
-* ...
+### API Documentation
+Postman: https://documenter.getpostman.com/view/1898554/2sA3XV9KT5
+
+### Heroku API test
+https://floating-garden-93986-ef06767d4d4c.herokuapp.com/api/board
