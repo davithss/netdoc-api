@@ -61,9 +61,16 @@ class Game
   def count_neighbours(x, y, grid)
     neighbours = 0
     neighbours += grid[y][x - 1] if x - 1 >= 0
-    neighbours += grid[y - 1][x] if y - 1 >= 0
     neighbours += grid[y][x + 1] if x + 1 < grid[y].size
+
+    neighbours += grid[y - 1][x] if y - 1 >= 0
+    neighbours += grid[y - 1][x-1] if y - 1 >= 0 && x - 1 >= 0
+    neighbours += grid[y - 1][x+1] if y - 1 >= 0 && x + 1 < grid[y].size
+    
     neighbours += grid[y + 1][x] if y + 1 < grid.size
+    neighbours += grid[y + 1][x-1] if y + 1 < grid.size && x - 1 >= 0
+    neighbours += grid[y + 1][x+1] if y + 1 < grid.size && x + 1 < grid[y].size
+
     neighbours
   end
   
