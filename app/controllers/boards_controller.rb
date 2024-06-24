@@ -26,8 +26,12 @@ class BoardsController < ApplicationController
 	end
 	
 	def final_state
-		@game.final_state(params[:attempts].to_i)
-		render json: @game.board.cells, status: :ok
+		begin
+			@game.final_state(params[:attempts].to_i)
+			render json: { state: @game.board.cells }, status: :ok
+		rescue StandardError => e
+			render json: { error: e.message, last_state: @game.board.cells }, status: :unprocessable_entity
+		end
 	end
 	
 	def reset
